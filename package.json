@@ -1,0 +1,17 @@
+{
+  "name": "gfwadd",
+  "version": "1.0.0",
+  "description": "push rule to gfwlist from clipboard ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tool"
+  ],
+  "author": "jane",
+  "license": "ISC",
+  "dependencies": {
+    "clipboardy": "^1.2.2"
+  }
+}
