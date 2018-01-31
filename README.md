@@ -1,2 +1,2 @@
 # gfwAdd
-push new rule to gfwlist from clipboard
+push rule to gfwlist from clipboard
