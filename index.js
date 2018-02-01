@@ -1,4 +1,4 @@
-#!/usr/bin/env/node
+#!/usr/bin/env node
 const {exec, execSync} = require('child_process')
 const clipboardy = require('clipboardy')
 // 从剪贴板中获得url
