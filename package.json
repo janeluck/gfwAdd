@@ -15,6 +15,6 @@
     "clipboardy": "^1.2.2"
   },
   "bin": {
-    "gfw": "./index.js"
+    "gfwadd": "./index.js"
   }
 }
