@@ -1,8 +1,17 @@
 #!/usr/bin/env node
 const {exec, execSync} = require('child_process')
 const clipboardy = require('clipboardy')
-// 从剪贴板中获得url
-const url = clipboardy.readSync().match(/https?:\/\/[^/]+/)[0]
+const r = /https?:\/\/[^/]+/
+const argUrl = process.argv[2]
+let url = ''
+// 先从命令行提取参数
+if (argUrl) {
+    url = argUrl.match(r)[0]
+} else {
+    // 从剪贴板中获得url
+    url = clipboardy.readSync().match(r)[0]
+}
+
 // 处理成sed命令所需要的格式
 const sedUrl = '\\"' + url + '\\"'
 // 向gfwlist.js的rules添加网址
@@ -10,7 +19,7 @@ exec(`sed -i "" "6 a\\ \n  ${sedUrl},\n"       ~/.ShadowsocksX/gfwlist.js`, (err
     if (error) {
         console.error(`exec error: ${error}`)
         return;
-    }else {
+    } else {
         console.log(`${url}添加成功`)
     }
     // 重启ShadowsocksX
