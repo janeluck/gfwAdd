@@ -11,7 +11,7 @@
   ],
   "author": "jane",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "clipboardy": "^1.2.2"
   },
   "bin": {
