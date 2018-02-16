@@ -1,6 +1,6 @@
 {
   "name": "gfwadd",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "push rule to gfwlist from clipboard ",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   ],
   "author": "jane",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "clipboardy": "^1.2.2"
   },
   "bin": {
