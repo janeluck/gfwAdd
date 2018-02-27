@@ -11,6 +11,7 @@ const inputMsg = meow(`
 
 	Options
 	  --all, -a  match all domain
+	  --reload, -r auto reload current chrome tab
 
 	Examples
 	  $ gfwadd http://janeluck.github.io -a
@@ -24,6 +25,10 @@ const inputMsg = meow(`
         all: {
             type: 'boolean',
             alias: 'a'
+        },
+        reload: {
+            type: 'boolean',
+            alias: 'r'
         }
     }
 })
@@ -67,6 +72,22 @@ exec(`sed -i "" "6 a\\ \n  ${sedUrl},\n"       ~/.ShadowsocksX/gfwlist.js`, (err
             return
         } else {
             console.log(`${chalk.green('✔')}  ShadowsocksX已经重启`)
+
+
+            // 自动刷新浏览器页面
+            if (inputMsg.flags.r) {
+                exec(`osascript -e 'tell application "Google Chrome" to tell the active tab of its first window to reload'`, (error, stdout, stderr) => {
+
+                    if (error) {
+                        console.error(`${chalk.red('✘')}  Error: ${error}`)
+                        return
+                    } else {
+                        console.log(`${chalk.green('✔')}  Chrome页面已经刷新`)
+                    }
+                })
+            }
+
+
         }
     })
 })
