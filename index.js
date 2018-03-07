@@ -53,7 +53,7 @@ if (argUrl) {
 }
 
 
-if (inputMsg.flags.a) {
+if (inputMsg.flags.a || inputMsg.flags.ar) {
     url = url.replace(/https?:\/\/[^\\.]+/, '*')
 }
 
@@ -79,7 +79,7 @@ exec(`sed -i "" "6 a\\ \n  ${sedUrl},\n"       ~/.ShadowsocksX/gfwlist.js`, (err
 
 
             // 自动刷新浏览器页面
-            if (inputMsg.flags.r) {
+            if (inputMsg.flags.r || inputMsg.flags.ar) {
                 exec(`osascript -e 'tell application "Google Chrome" to tell the active tab of its first window to reload'`, (error, stdout, stderr) => {
 
                     if (error) {
