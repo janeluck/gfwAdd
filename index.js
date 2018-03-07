@@ -15,7 +15,7 @@ const inputMsg = meow(`
 
 	Examples
 	  $ gfwadd http://janeluck.github.io -a
-	  🌈 push *.github.io to rules
+	    push *.github.io to rules
 	  $ gfwadd http://janeluck.github.io 
 	    push  http://janeluck.github.io to rules
 	  $ gfwadd
@@ -29,6 +29,10 @@ const inputMsg = meow(`
         reload: {
             type: 'boolean',
             alias: 'r'
+        },
+        allreload: {
+            type: 'boolean',
+            alias: 'ar'
         }
     }
 })
