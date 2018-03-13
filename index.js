@@ -57,6 +57,13 @@ if (inputMsg.flags.a || inputMsg.flags.ar) {
     url = url.replace(/https?:\/\/[^\\.]+/, '*')
 }
 
+// 可能会出现*.com的情况, return
+
+if (/\*\.[a-zA-Z]+$/.test(url)) {
+    console.error(`${chalk.red('✘')}  Error: 不能添加${url}, 请不要使用-a`)
+    return
+}
+
 
 // 处理成sed命令所需要的格式
 const sedUrl = '\\"' + url + '\\"'

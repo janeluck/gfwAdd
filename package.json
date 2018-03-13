@@ -1,6 +1,6 @@
 {
   "name": "gfwadd",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "push rule to gfwlist from clipboard ",
   "main": "index.js",
   "scripts": {
