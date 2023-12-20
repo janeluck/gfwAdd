@@ -68,9 +68,9 @@ if (/\*\.[a-zA-Z]+$/.test(url)) {
 
 // 处理成sed命令所需要的格式
 const sedUrl = url;
-// 向gfwlist.js的rules添加网址
+// 向user-rule.txt添加网址
 exec(
-  `sed -i "" "6 a\\ \n  ${sedUrl},\n"       ~/.shadowsocksX-NG/user-rule.txt`,
+  `sed -i "" "2 a\\ \n${sedUrl}\n"       ~/.shadowsocksX-NG/user-rule.txt`,
   (error, stdout, stderr) => {
     if (error) {
       console.error(`${chalk.red("✘")}  Error: ${error}`);
