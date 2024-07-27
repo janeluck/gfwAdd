@@ -70,7 +70,7 @@ if (/\*\.[a-zA-Z]+$/.test(url)) {
 const sedUrl = url;
 // 向user-rule.txt添加网址
 exec(
-  `sed -i "" "2 a\\ \n${sedUrl}\n"       ~/.shadowsocksX-NG/user-rule.txt`,
+  `sed -i "" "2 a\\ \n${sedUrl}\n"       ~/.ShadowsocksX-NG/user-rule.txt`,
   (error, stdout, stderr) => {
     if (error) {
       console.error(`${chalk.red("✘")}  Error: ${error}`);
@@ -78,16 +78,16 @@ exec(
     } else {
       console.log(`${chalk.green("✔")}  Success:  ${url}添加成功`);
     }
-    // 重启shadowsocksX-NG-R8
+    // 重启shadowsocksX-NG
     exec(
-      `osascript -e 'quit app "shadowsocksX-NG-R8"'  && sleep 1 &&  open -a 'shadowsocksX-NG-R8'`,
+      `osascript -e 'quit app "shadowsocksX-NG"'  && sleep 1 &&  open -a 'shadowsocksX-NG'`,
       (error, stdout, stderr) => {
         console.log(stdout);
         if (error) {
           console.error(`${chalk.red("✘")}  Error: ${error}`);
           return;
         } else {
-          console.log(`${chalk.green("✔")}  shadowsocksX-NG-R8已经重启`);
+          console.log(`${chalk.green("✔")}  shadowsocksX-NG已经重启`);
 
           // 自动刷新浏览器页面
           if (inputMsg.flags.r || inputMsg.flags.ar) {
